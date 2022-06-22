@@ -9,5 +9,15 @@
     <p>Welcome to <%= title %></p>
 
     <h4><%= subtitle %></h4>
+
+    <table>
+     <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.ssn %></td>
+      </tr>
+     <% }) %>
+    </table>
   </body>
 </html>
