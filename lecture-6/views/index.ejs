@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/create">Create new user</a>
+    <h2>Table of users</h2>
+    <table>
+     <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.ssn %></td>
+        <td><a href="/user/<%= user.id %>/view">View</a></td>
+      </tr>
+     <% }) %>
+    </table>
+  </body>
+</html>
