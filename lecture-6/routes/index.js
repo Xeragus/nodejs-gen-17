@@ -11,8 +11,10 @@ const indexController = require('../controllers/index');
 
 router.get('/', indexController.index) // localhost:3000/
       .get('/hehe', indexController.hehe) // localhost:3000/hehe
-      .get('/user/:id/view', indexController.viewUser) // localhost:3000/3, lcl:3000/596584934
       .get('/create', indexController.create)
+      .get('/user/:id/view', indexController.viewUser) // localhost:3000/3, lcl:3000/596584934
+      .get('/user/:id/edit', indexController.editUser)
       .post('/', indexController.postCreate)
+
 
 module.exports = router;

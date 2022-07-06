@@ -1,4 +1,6 @@
-const users = [];
+const users = [{id: 1, name: 'Boban', lastname: 'S', ssn: '123'}];
+
+// CRUD: Create Read Update Delete
 
 module.exports = {
     index: (req, res) => {
@@ -11,6 +13,11 @@ module.exports = {
         const user = users.find(user => user.id == req.params.id);
 
         res.render('view-user', { user: user });
+    },
+    editUser: (req, res) => {
+        const user = users.find(user => user.id == req.params.id);
+
+        res.render('edit-user', { user: user });
     },
     create: (req, res) => {
         res.render('create');
