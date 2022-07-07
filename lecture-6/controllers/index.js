@@ -29,5 +29,15 @@ module.exports = {
         users.push(user); // simulacija na povik za dodavanje zapis vo baza
 
         res.redirect('/');
+    },
+    putEditUser: (req, res) => {
+        //Find index of specific object using findIndex method.    
+        
+        userIndex = users.findIndex((user => user.id == req.params.id));
+        users[userIndex] = req.body;
+
+        res.send({
+            success: true
+        });
     }
 }

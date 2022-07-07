@@ -15,6 +15,7 @@ router.get('/', indexController.index) // localhost:3000/
       .get('/user/:id/view', indexController.viewUser) // localhost:3000/3, lcl:3000/596584934
       .get('/user/:id/edit', indexController.editUser)
       .post('/', indexController.postCreate)
+      .put('/user/:id', indexController.putEditUser)
 
 
 module.exports = router;
