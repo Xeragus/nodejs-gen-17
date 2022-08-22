@@ -9,12 +9,12 @@
     <br>
     <span style="color: red;" id="error_message"></span>
     <form onsubmit="event.preventDefault()" id="form">
-        Name: <input type="text" name="name" value="<%= user.name %>"><br>
-        Last name: <input type="text" name="lastname" value="<%= user.lastname %>"><br>
+        Name: <input type="text" name="first_name" value="<%= user.first_name %>"><br>
+        Last name: <input type="text" name="last_name" value="<%= user.last_name %>"><br>
         Ssn: <input type="text" name="ssn" value="<%= user.ssn %>"><br>
         Email: <input type="email" name="email" value="<%= user.email %>"><br>
 
-        <button onclick="updateUser(`<%= user.id %>`);">Update</button>
+        <button onclick="updateUser(`<%= user._id %>`);">Update</button>
     </form>
 </body>
 </html>

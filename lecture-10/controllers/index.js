@@ -11,13 +11,13 @@ module.exports = {
     hehe: (req, res) => {
         res.render('hehe', { title: 'Hehe Express', subtitle: 'Hehe OG' });
     },
-    viewUser: (req, res) => {
-        const user = users.find(user => user.id == req.params.id);
+    viewUser: async (req, res) => {
+        const user = await User.findById(req.params.id);
 
         res.render('view-user', { user: user });
     },
-    editUser: (req, res) => {
-        const user = users.find(user => user.id == req.params.id);
+    editUser: async (req, res) => {
+        const user = await User.findById(req.params.id);
 
         res.render('edit-user', { user: user });
     },
@@ -25,22 +25,14 @@ module.exports = {
         res.render('create');
     },
     postCreate: async (req, res) => {
-        // const user = req.body;
-        // user.id = users.length + 1;
-
-        // users.push(user); // simulacija na povik za dodavanje zapis vo baza
-
         await User.create(req.body);
 
         res.redirect('/');
     },
-    putEditUser: (req, res) => {
+    putEditUser: async (req, res) => {
         try {
-            //Find index of specific object using findIndex method.   
-            userIndex = users.findIndex((user => user.id == req.params.id));
-            users[userIndex] = req.body;
-
-            // throw new Error('Ova e samo random greska 5555555');
+            console.log(req.body);
+            await User.findByIdAndUpdate(req.params.id, req.body);
 
             res.send({
                 success: true

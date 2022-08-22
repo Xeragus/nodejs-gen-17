@@ -2,8 +2,8 @@ function updateUser(userId) {
     const form = document.getElementById('form');
     const user = {
         id: userId,
-        name: form.name.value,
-        lastname: form.lastname.value,
+        first_name: form.first_name.value,
+        last_name: form.last_name.value,
         ssn: form.ssn.value,
         email: form.email.value
     };
